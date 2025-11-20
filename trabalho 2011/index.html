@@ -1,0 +1,226 @@
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+<head>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Quiz literario Interativo</title>    
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">     
+
+    <style>        
+       
+        body {
+            background-color: #1d1c1c;
+            color: #f5f5f5;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .quiz-card {            
+            border-radius: 12px;            
+            padding: 20px;
+            background-color: #2b2b2b;
+            color: #ffffff;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            background-color: #000;
+            border-bottom: 3px solid #b30059;
+        }
+
+        header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 2px solid #b30059;
+        }
+
+        select,
+        input[type="radio"],
+        input[type="checkbox"] {
+            cursor: pointer;
+        }
+
+        #result-area { 
+            display: none; 
+            font-size: 1.2rem;
+        }
+
+        .galeria-final {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .galeria-final img {
+            width: 180px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid #b30059;
+            box-shadow: 0 0 10px #b30059;
+            transition: 0.3s;
+        }
+
+        .galeria-final img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #ff4b9f;
+        }
+
+        
+        .btn-primary {
+            background-color: #b30059 !important;
+            border: none !important;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff4b9f !important;
+        }
+
+        footer {
+            color: #ccc;
+        }
+    </style>
+</head> 
+
+<body> 
+
+<header class="text-white text-center p-4 mb-4">
+  
+    <img src="capa.jpg" alt="Livros">
+    
+    <div>
+        <h1 style="font-weight: 800;">Quiz Literário Interativo</h1>
+        <p style="font-weight: 300;">Descubra mais sobre o universo Jogos Vorazes</p>
+    </div>
+</header>
+
+<main class="container">    
+    <section class="row justify-content-center">        
+        <div class="col-md-8">            
+            <div class="card quiz-card shadow">                 
+                <h2 class="mb-3" style="font-weight: 600;">Responda as perguntas:</h2>                 
+                
+                <form id="quiz-form">                     
+
+                    <div class="mb-3">                        
+                        <label class="form-label"><strong>1. Quem é escritor/a do universo distópico de Jogos Vorazes?</strong></label>                         
+                        <div class="form-check">
+                            <input type="radio" name="p1" value="0" class="form-check-input">
+                            <label class="form-check-label">Collen Hoover</label>
+                        </div>                         
+                        <div class="form-check">
+                            <input type="radio" name="p1" value="1" class="form-check-input">
+                            <label class="form-check-label">Suzanne Collins</label>
+                        </div>                         
+                        <div class="form-check">
+                            <input type="radio" name="p1" value="0" class="form-check-input">
+                            <label class="form-check-label">J. K. Rowling</label>
+                        </div>
+                    </div>                     
+
+                    <div class="mb-3">                        
+                        <label class="form-label"><strong>2. Quais destes personagens são do distrito 12?</strong></label>                         
+                        <div class="form-check">
+                            <input type="checkbox" name="p2" value="0" class="form-check-input">
+                            <label class="form-check-label">Snow</label>
+                        </div>                         
+                        <div class="form-check">
+                            <input type="checkbox" name="p2" value="1" class="form-check-input">
+                            <label class="form-check-label">Haymitch</label>
+                        </div>                         
+                        <div class="form-check">
+                            <input type="checkbox" name="p2" value="2" class="form-check-input">
+                            <label class="form-check-label">Prim</label>
+                        </div>                          
+                        <div class="form-check">
+                            <input type="checkbox" name="p2" value="0" class="form-check-input">
+                            <label class="form-check-label">Zoro</label>
+                        </div>                         
+                        <div class="form-check">
+                            <input type="checkbox" name="p2" value="1" class="form-check-input">
+                            <label class="form-check-label">Peeta</label>
+                        </div>
+                    </div>                     
+
+                    <div class="mb-3">                        
+                        <label class="form-label"><strong>3. Em qual livro eles alcançam o fim do regime opressor da Capital?</strong></label>
+                        <select class="form-select" name="p3">
+                            <option value="">Selecione...</option>
+                            <option value="0">Jogos Vorazes</option>
+                            <option value="0">Em Chamas</option>
+                            <option value="1">A Esperança</option>
+                            <option value="0">Amanhecer Na Colheita</option>
+                            <option value="0">A Cantiga dos Pássaros e das Serpentes</option>
+                        </select>
+                    </div>                                          
+
+                    <button type="submit" class="btn btn-primary w-100">Enviar <3</button>                 
+                </form>
+            </div>
+
+            <div id="result-area" class="alert mt-4 text-center"></div>
+
+           
+            <div class="galeria-final">
+                <img src="rebeliao.jpg" alt="imagem 1">
+                <img src="katness.webp" alt="imagem 2">
+                <img src="snow.webp" alt="imagem 3">
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="text-center mt-4 mb-4">
+    <p>Projeto de HTML, CSS e JavaScript Para Avaliaçao <3 :) </p>
+</footer>
+
+<script>
+document.getElementById("quiz-form").addEventListener("submit", function(event) {
+    event.preventDefault();     
+
+    let score = 0;
+    let total = 6;
+
+    const p1 = document.querySelector("input[name='p1']:checked");
+    if (!p1) return alert("Responda a pergunta 1!");
+    score += Number(p1.value);
+
+    const p2 = document.querySelectorAll("input[name='p2']:checked");
+    if (p2.length < 2) return alert("Escolha 2 opções na pergunta 2!");
+    p2.forEach(cb => score += Number(cb.value));
+
+    const p3 = document.querySelector("select[name='p3']");
+    if (p3.value === "") return alert("Selecione uma opção na pergunta 3!");
+    score += Number(p3.value);
+
+    const resultArea = document.getElementById("result-area");
+    resultArea.style.display = "block";
+
+    if (score === total) {
+        resultArea.className = "alert alert-success";
+        resultArea.innerHTML = `🎉 Parabéns! Você acertou tudo! Pontuação: <strong>${score}/${total}</strong>`;
+    } else {
+        resultArea.className = "alert alert-warning";
+        resultArea.innerHTML = `Você fez <strong>${score}</strong> de <strong>${total}</strong>. Continue praticando!`;
+    }
+
+    let feedback = document.createElement("p");
+    feedback.innerText = "Obrigado por jogar! Atualize a página para tentar novamente.";
+    feedback.classList.add("mt-3");
+    resultArea.appendChild(feedback);
+});
+</script>
+
+</body>
+</html>
